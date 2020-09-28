@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_MathGame.h"
 
 class MathGame : public QMainWindow
 {
@@ -11,5 +10,4 @@ public:
     MathGame(QWidget *parent = Q_NULLPTR);
 
 private:
-    Ui::MathGameClass ui;
 };
