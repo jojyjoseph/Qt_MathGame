@@ -13,12 +13,19 @@ public:
 
 private:
 	void createMenus(void);
+	void createActions(void);
+
 
 
 	// Menus
 	QMenu * fileMenu;
+	QMenu * helpMenu;
 
 
 	// Actions
 	QAction * newFileAction;
+	QAction * openFileAction;
+
+	// Methods
+	void newFileMethod(void);
 };
