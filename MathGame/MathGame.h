@@ -3,6 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include "QMenu"
 #include "QAction"
+#include "QToolBar"
 
 class MathGame : public QMainWindow
 {
@@ -14,13 +15,15 @@ public:
 private:
 	void createMenus(void);
 	void createActions(void);
-
+	void createToolBar(void);
 
 
 	// Menus
 	QMenu * fileMenu;
 	QMenu * helpMenu;
 
+	// Tool bar
+	QToolBar * fileToolBar;
 
 	// Actions
 	QAction * newFileAction;
@@ -28,4 +31,6 @@ private:
 
 	// Methods
 	void newFileMethod(void);
+	void dummyFunction(void);
+
 };

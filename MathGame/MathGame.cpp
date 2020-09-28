@@ -1,6 +1,8 @@
 #include "MathGame.h"
 
 #include "QMenuBar"
+#include "QToolBar"
+#include "QMessageBox"
 
 MathGame::MathGame(QWidget *parent)
     : QMainWindow(parent)
@@ -14,6 +16,9 @@ MathGame::MathGame(QWidget *parent)
 
 	// create Menu bar
 	createMenus();
+
+	// create Tool bar
+	createToolBar();
 }
 
 void MathGame::createMenus(void)
@@ -33,14 +38,30 @@ void MathGame::createActions(void)
 	newFileAction = new QAction(tr("&New"));
 	newFileAction->setStatusTip(tr("Create a new file"));
 	connect(newFileAction, &QAction::triggered, this, 
-		&MathGame::newFileMethod
+		&MathGame::dummyFunction
 	);
 
 	// open File Action
 	openFileAction = new QAction(tr("&Open"));
 }
 
+void MathGame::createToolBar(void)
+{
+	//fileToolBar = new QToolBar;
+	//addToolBar(Qt::TopToolBarArea,fileToolBar);
+	//fileToolBar = this->addToolBar(tr("File"));
+	//QToolBar *toolbar 
+	fileToolBar = addToolBar("main toolbar");
+	fileToolBar->addAction("New File");
+}
+
 void MathGame::newFileMethod(void)
 {
+}
 
+void MathGame::dummyFunction(void)
+{
+	QMessageBox msgBox;
+	msgBox.setText("This is a test function message box");
+	msgBox.exec();
 }
