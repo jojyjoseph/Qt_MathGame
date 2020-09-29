@@ -1,33 +1,43 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "QMenu"
-#include "QAction"
-#include "QToolBar"
+#include <QMenu>
+#include <QAction>
+#include <QToolBar>
+#include <QTextEdit>
+#include <QListWidget>
 
 class MathGame : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    MathGame(QWidget *parent = Q_NULLPTR);
+	MathGame(QWidget* parent = Q_NULLPTR);
 
 private:
 	void createMenus(void);
 	void createActions(void);
 	void createToolBar(void);
+	void createDockWindows(void);
 
 
 	// Menus
-	QMenu * fileMenu;
-	QMenu * helpMenu;
+	QMenu* fileMenu;
+	QMenu* viewMenu;
+	QMenu* helpMenu;
 
 	// Tool bar
-	QToolBar * fileToolBar;
+	QToolBar* fileToolBar;
 
 	// Actions
-	QAction * newFileAction;
-	QAction * openFileAction;
+	QAction* newFileAction;
+	QAction* openFileAction;
+
+	//
+	QTextEdit* textEdit;
+	QListWidget* customerList;
+	QListWidget* paragraphsList;
+
 
 	// Methods
 	void newFileMethod(void);
