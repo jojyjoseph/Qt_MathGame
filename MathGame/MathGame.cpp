@@ -9,13 +9,28 @@
 #include <QIcon>
 #include <QDockWidget>
 #include <QListWidget>
+#include <QGraphicsView >
+#include <QGraphicsScene>
+#include <QBrush>
+#include <QPen>
+
 
 MathGame::MathGame(QWidget *parent)
     : QMainWindow(parent)
 {
 	// set up central widget
-	QWidget *widget = new QWidget;
-	setCentralWidget(widget);
+	QGraphicsView * gv = new QGraphicsView(this);
+	setCentralWidget(gv);
+
+	// operation on the central widget - To be refactored
+
+	gv->setScene(new QGraphicsScene(gv));
+	QGraphicsScene* scene = gv->scene();
+	QBrush greenBrush(Qt::green);
+	QBrush blueBrush(Qt::blue);
+	QPen outlinePen(Qt::black);
+	outlinePen.setWidth(2);
+	scene->addRect(100, 0, 80, 100, outlinePen, blueBrush);
 
 	// create Actions
 	createActions();
