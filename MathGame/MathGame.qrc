@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="MathGame">
+    <qresource>
+		<file>icons/document.png</file>
     </qresource>
 </RCC>

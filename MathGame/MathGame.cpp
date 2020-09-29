@@ -1,8 +1,12 @@
 #include "MathGame.h"
 
+#include "QWidget"
+#include <QMainWindow>
 #include "QMenuBar"
 #include "QToolBar"
 #include "QMessageBox"
+#include "QAction"
+#include "QIcon"
 
 MathGame::MathGame(QWidget *parent)
     : QMainWindow(parent)
@@ -37,6 +41,7 @@ void MathGame::createActions(void)
 	// new File Action
 	newFileAction = new QAction(tr("&New"));
 	newFileAction->setStatusTip(tr("Create a new file"));
+	newFileAction->setIcon(QIcon(":/icons/document.png"));
 	connect(newFileAction, &QAction::triggered, this, 
 		&MathGame::dummyFunction
 	);
@@ -52,12 +57,13 @@ void MathGame::createToolBar(void)
 	//fileToolBar = this->addToolBar(tr("File"));
 	//QToolBar *toolbar 
 	fileToolBar = addToolBar("main toolbar");
-	fileToolBar->addAction("New File");
+	fileToolBar->addAction(newFileAction);
 }
 
 void MathGame::newFileMethod(void)
 {
 }
+
 
 void MathGame::dummyFunction(void)
 {
