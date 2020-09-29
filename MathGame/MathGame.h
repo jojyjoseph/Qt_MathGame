@@ -32,5 +32,6 @@ private:
 	// Methods
 	void newFileMethod(void);
 	void dummyFunction(void);
+	void aboutQt(void);
 
 };
